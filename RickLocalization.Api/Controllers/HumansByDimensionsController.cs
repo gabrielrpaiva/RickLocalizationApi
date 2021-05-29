@@ -50,5 +50,31 @@ namespace RickLocalization.Api.Controllers
             
             return Ok(entidade);
         }
+
+
+        [HttpGet]
+        [Route("GetResponsableHumanOriginalDimension")]
+        public virtual async Task<IActionResult> GetResponsableHumanOriginalDimension([FromQuery] int IdHuman)
+        {
+            HumansByDimensionsViewModel entidade = new HumansByDimensionsViewModel();
+
+            try
+            {
+                await Task.Run(() =>
+                {
+                    HumansByDimensionsEntity entity = _service.GetResponsableHumanOriginalDimension(IdHuman);
+                    entidade = _mapper.Map<HumansByDimensionsViewModel>(entity);
+
+                });
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+
+            return Ok(entidade);
+        }
     }
 }

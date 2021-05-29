@@ -32,10 +32,24 @@ namespace RickLocalization.Repository.Repository
             {
 
                 throw ex;
+            }  
+        }
+
+        public HumansByDimensionsEntity GetResponsableHumanOriginalDimension(int idHuman)
+        {
+            try
+            {
+                return _context.HumansByDimensionsEntity
+              .Include(x => x.Human)
+              .Include(x => x.HumanResponsibleForMe)
+              .Include(x => x.ResponsibleForWhichHuman)
+              .FirstOrDefault(x => x.IdHuman == idHuman);
             }
-         
-                
-             
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

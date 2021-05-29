@@ -8,5 +8,6 @@ namespace RickLocalization.Repository.Repository.Interfaces
     public interface IHumansByDimensionsRepository
     {
         HumansByDimensionsEntity GetHumanOriginalDimensionWithTravels(int idHuman);
+        HumansByDimensionsEntity GetResponsableHumanOriginalDimension(int idHuman);
     }
 }

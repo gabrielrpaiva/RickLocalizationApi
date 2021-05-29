@@ -29,5 +29,20 @@ namespace RickLocalization.Service
             
   
         }
+
+        public HumansByDimensionsEntity GetResponsableHumanOriginalDimension(int idHuman)
+        {
+            try
+            {
+                return _repository.GetResponsableHumanOriginalDimension(idHuman);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
     }
 }

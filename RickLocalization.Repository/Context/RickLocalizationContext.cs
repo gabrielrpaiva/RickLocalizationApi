@@ -22,5 +22,7 @@ namespace RickLocalization.Repository.Context
         public DbSet<DimensionsEntity> DimensionsEntity { get; set; }
 
         public DbSet<HumansByDimensionsEntity> HumansByDimensionsEntity { get; set; }
+
+        public DbSet<TravelHistoryEntity> TravelHistoryEntity { get; set; }
     }
 }

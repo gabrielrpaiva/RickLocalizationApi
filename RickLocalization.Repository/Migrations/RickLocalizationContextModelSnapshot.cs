@@ -92,19 +92,19 @@ namespace RickLocalization.Repository.Migrations
 
             modelBuilder.Entity("RickLocalization.Domain.Entities.HumansByDimensionsEntity", b =>
                 {
-                    b.Property<int>("IdHuman")
-                        .HasColumnType("int")
-                        .HasColumnName("ID_HUMAN");
-
-                    b.Property<int>("IdDimension")
-                        .HasColumnType("int")
-                        .HasColumnName("ID_DIMENSION");
-
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("ID")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdDimension")
+                        .HasColumnType("int")
+                        .HasColumnName("ID_DIMENSION");
+
+                    b.Property<int>("IdHuman")
+                        .HasColumnType("int")
+                        .HasColumnName("ID_HUMAN");
 
                     b.Property<int?>("IdHumanResponsibleForMe")
                         .HasColumnType("int")
@@ -114,7 +114,9 @@ namespace RickLocalization.Repository.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ID_RESPONSIBLE_FOR_WHICH_HUMAN");
 
-                    b.HasKey("IdHuman", "IdDimension");
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("IdHuman", "IdDimension");
 
                     b.HasIndex("IdDimension");
 
@@ -127,16 +129,142 @@ namespace RickLocalization.Repository.Migrations
                     b.HasData(
                         new
                         {
-                            IdHuman = 1,
-                            IdDimension = 1,
                             Id = 1,
+                            IdDimension = 1,
+                            IdHuman = 1,
                             IdResponsibleForWhichHuman = 2
                         },
                         new
                         {
-                            IdHuman = 2,
+                            Id = 2,
                             IdDimension = 1,
-                            Id = 1,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IdDimension = 2,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            IdDimension = 2,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            IdDimension = 3,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            IdDimension = 3,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            IdDimension = 4,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            IdDimension = 4,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            IdDimension = 5,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            IdDimension = 5,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            IdDimension = 6,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            IdDimension = 6,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            IdDimension = 7,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            IdDimension = 7,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 15,
+                            IdDimension = 8,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 16,
+                            IdDimension = 8,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            IdDimension = 9,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 18,
+                            IdDimension = 9,
+                            IdHuman = 2,
+                            IdHumanResponsibleForMe = 1
+                        },
+                        new
+                        {
+                            Id = 19,
+                            IdDimension = 10,
+                            IdHuman = 1,
+                            IdResponsibleForWhichHuman = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            IdDimension = 10,
+                            IdHuman = 2,
                             IdHumanResponsibleForMe = 1
                         });
                 });
@@ -180,17 +308,9 @@ namespace RickLocalization.Repository.Migrations
                         .HasColumnName("ID")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("DimensionsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("HumansByDimensionsIdDimension")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("HumansByDimensionsIdHuman")
-                        .HasColumnType("int");
-
                     b.Property<int>("IdHumansByDimensions")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("ID_HUMANS_DIMENSION");
 
                     b.Property<int>("IdTargetDimension")
                         .HasColumnType("int")
@@ -202,11 +322,41 @@ namespace RickLocalization.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DimensionsId");
+                    b.HasIndex("IdHumansByDimensions");
 
-                    b.HasIndex("HumansByDimensionsIdHuman", "HumansByDimensionsIdDimension");
+                    b.HasIndex("IdTargetDimension");
 
                     b.ToTable("TBL_TRAVEL_HISTORY");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IdHumansByDimensions = 1,
+                            IdTargetDimension = 3,
+                            TravelDate = new DateTime(2021, 1, 3, 8, 0, 15, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            IdHumansByDimensions = 1,
+                            IdTargetDimension = 4,
+                            TravelDate = new DateTime(2021, 4, 1, 8, 0, 15, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IdHumansByDimensions = 2,
+                            IdTargetDimension = 6,
+                            TravelDate = new DateTime(2021, 1, 3, 8, 0, 15, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            IdHumansByDimensions = 2,
+                            IdTargetDimension = 2,
+                            TravelDate = new DateTime(2021, 4, 1, 8, 0, 15, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("RickLocalization.Domain.Entities.HumansByDimensionsEntity", b =>
@@ -248,13 +398,19 @@ namespace RickLocalization.Repository.Migrations
 
             modelBuilder.Entity("RickLocalization.Domain.Entities.TravelHistoryEntity", b =>
                 {
-                    b.HasOne("RickLocalization.Domain.Entities.DimensionsEntity", "Dimensions")
-                        .WithMany()
-                        .HasForeignKey("DimensionsId");
-
                     b.HasOne("RickLocalization.Domain.Entities.HumansByDimensionsEntity", "HumansByDimensions")
                         .WithMany("TravelHistories")
-                        .HasForeignKey("HumansByDimensionsIdHuman", "HumansByDimensionsIdDimension");
+                        .HasForeignKey("IdHumansByDimensions")
+                        .HasConstraintName("FK_TRAVEL_HISTORY_HUMANS_DIMENSIONS")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RickLocalization.Domain.Entities.DimensionsEntity", "Dimensions")
+                        .WithMany()
+                        .HasForeignKey("IdTargetDimension")
+                        .HasConstraintName("FK_TRAVEL_HISTORY_DIMENSIONS")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Dimensions");
 
