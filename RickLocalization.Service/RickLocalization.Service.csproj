@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RickLocalization.Domain\RickLocalization.Domain.csproj" />
+    <ProjectReference Include="..\RickLocalization.Repository\RickLocalization.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

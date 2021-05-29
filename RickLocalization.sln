@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Api", "RickLocalization.Api\RickLocalization.Api.csproj", "{56266B47-6C35-4524-ADF9-06CE1506CB6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{4E52AB22-0456-46FB-AA0A-B7DC4FD303EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{F3516604-EFC8-4278-B314-689914D08538}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Repository", "RickLocalization.Repository\RickLocalization.Repository.csproj", "{DB1EA2E9-DD7F-4896-BE4F-FCEA807B8E0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{3A3836FC-1BA0-45C0-AE70-861054478B33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickLocalization.Domain", "RickLocalization.Domain\RickLocalization.Domain.csproj", "{EC992B37-FEC9-4635-9D3D-50DE9EEB1F01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{429666DA-D391-42D1-9630-6CBDAEADCAED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RickLocalization.Service", "RickLocalization.Service\RickLocalization.Service.csproj", "{33D86FF2-8C36-478F-B6B7-809B18D7EACD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56266B47-6C35-4524-ADF9-06CE1506CB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56266B47-6C35-4524-ADF9-06CE1506CB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56266B47-6C35-4524-ADF9-06CE1506CB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56266B47-6C35-4524-ADF9-06CE1506CB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1EA2E9-DD7F-4896-BE4F-FCEA807B8E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1EA2E9-DD7F-4896-BE4F-FCEA807B8E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1EA2E9-DD7F-4896-BE4F-FCEA807B8E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1EA2E9-DD7F-4896-BE4F-FCEA807B8E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC992B37-FEC9-4635-9D3D-50DE9EEB1F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC992B37-FEC9-4635-9D3D-50DE9EEB1F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC992B37-FEC9-4635-9D3D-50DE9EEB1F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC992B37-FEC9-4635-9D3D-50DE9EEB1F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D86FF2-8C36-478F-B6B7-809B18D7EACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D86FF2-8C36-478F-B6B7-809B18D7EACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D86FF2-8C36-478F-B6B7-809B18D7EACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D86FF2-8C36-478F-B6B7-809B18D7EACD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56266B47-6C35-4524-ADF9-06CE1506CB6A} = {4E52AB22-0456-46FB-AA0A-B7DC4FD303EF}
+		{DB1EA2E9-DD7F-4896-BE4F-FCEA807B8E0C} = {F3516604-EFC8-4278-B314-689914D08538}
+		{EC992B37-FEC9-4635-9D3D-50DE9EEB1F01} = {3A3836FC-1BA0-45C0-AE70-861054478B33}
+		{33D86FF2-8C36-478F-B6B7-809B18D7EACD} = {429666DA-D391-42D1-9630-6CBDAEADCAED}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCC304ED-268B-412B-A1F8-A858B728081B}
+	EndGlobalSection
+EndGlobal
