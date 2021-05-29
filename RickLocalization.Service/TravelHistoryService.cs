@@ -1,4 +1,5 @@
 ﻿using RickLocalization.Domain.Entities;
+using RickLocalization.Repository.Repository.Interfaces;
 using RickLocalization.Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ namespace RickLocalization.Service
     public class TravelHistoryService : ITravelHistoryService
     {
 
-        private readonly ITravelHistoryService _repository;
+        private readonly ITravelHistoryRepository _repository;
 
-        public TravelHistoryService(ITravelHistoryService repository)
+        public TravelHistoryService(ITravelHistoryRepository repository)
         {
             _repository = repository;
         }

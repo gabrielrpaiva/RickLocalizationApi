@@ -21,7 +21,11 @@ namespace RickLocalization.Api
         private static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IHumansByDimensionsService, HumansByDimensionsService>();
+            services.AddScoped<ITravelHistoryService, TravelHistoryService>();
+
+
             services.AddScoped<IHumansByDimensionsRepository, HumansByDimensionsRepository>();
+            services.AddScoped<ITravelHistoryRepository, TravelHistoryRepository>();
         }
          
     }

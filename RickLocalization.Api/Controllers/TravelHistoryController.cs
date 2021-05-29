@@ -33,7 +33,7 @@ namespace RickLocalization.Api.Controllers
             try
             {
                 TravelHistoryEntity entity = this._mapper.Map<TravelHistoryEntity>(travelHistoryViewModel);
-                result = await Task.Run(() => _service.Save(entity));               
+                 result = await Task.Run(() => _service.Save(entity));               
             }
             catch (Exception ex)
             {

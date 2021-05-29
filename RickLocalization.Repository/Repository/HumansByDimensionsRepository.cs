@@ -25,7 +25,9 @@ namespace RickLocalization.Repository.Repository
             {
                 return _context.HumansByDimensionsEntity
                .Include(x => x.Human)
+               .Include(x => x.Dimensions)
                .Include(x => x.TravelHistories)
+               .Include("TravelHistories.Dimensions")
                .FirstOrDefault(x => x.IdHuman == idHuman);
             }
             catch (Exception ex)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,8 +13,9 @@ namespace RickLocalization.Api.ViewModels
 
         public int IdTargetDimension { get; set; }
 
-        public DateTime TravelDate { get; set; }
+        public string TravelDate { get; set; }
 
+        [NotMapped]
         public string DimensionName { get; set; }
 
         #endregion
