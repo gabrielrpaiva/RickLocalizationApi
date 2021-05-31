@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using RickLocalization.Api.Response;
 using RickLocalization.Api.ViewModels;
 using RickLocalization.Domain.Entities;
 using RickLocalization.Service.Interfaces;
@@ -14,7 +13,7 @@ namespace RickLocalization.Api.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class HumansByDimensionsController : BaseController
+    public class HumansByDimensionsController : Controller
     {
 
         private readonly IHumansByDimensionsService _service;

@@ -26,8 +26,7 @@ namespace RickLocalization.Service
             {
 
                 throw ex;
-            }
-            
+            }            
   
         }
 
@@ -42,7 +41,6 @@ namespace RickLocalization.Service
 
                 throw ex;
             }
-
 
         }
     }

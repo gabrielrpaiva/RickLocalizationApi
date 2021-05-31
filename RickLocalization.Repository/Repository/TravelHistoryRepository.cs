@@ -17,8 +17,7 @@ namespace RickLocalization.Repository.Repository
         public TravelHistoryRepository(RickLocalizationContext context)
         {
             _context = context;
-        }
-         
+        }         
 
         public bool VerifyIfHumanIsOnHisOriginalDimension(int IdHumansByDimensions)
         {
@@ -31,8 +30,6 @@ namespace RickLocalization.Repository.Repository
                 {
                     return true;
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -42,7 +39,6 @@ namespace RickLocalization.Repository.Repository
 
             return false;
         }
-
 
         public Boolean Save(TravelHistoryEntity travelHistoryEntity)
         {
@@ -57,9 +53,7 @@ namespace RickLocalization.Repository.Repository
             {
 
                 throw ex;
-            }
-        
-
+            }     
 
             return true;
         }

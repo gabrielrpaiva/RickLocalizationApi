@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace RickLocalization.Api
 {
-    public   class InjectionContainer
-    { 
-            public static void Setup(IServiceCollection services)
-            {
-                RegisterServices(services); 
-            }
+    public class InjectionContainer
+    {
+        public static void Setup(IServiceCollection services)
+        {
+            RegisterServices(services);
+        }
 
         private static void RegisterServices(IServiceCollection services)
         {
@@ -29,6 +29,6 @@ namespace RickLocalization.Api
             services.AddScoped<ITravelHistoryRepository, TravelHistoryRepository>();
             services.AddScoped<IDimentionRepository, DimentionRepository>();
         }
-         
+
     }
 }
