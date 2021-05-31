@@ -15,9 +15,11 @@ namespace RickLocalization.Api.AutoMapperProfile
             #region Entity X ViewModel
 
             CreateMap<HumansEntity, HumansViweModel>();
+            CreateMap<DimensionsEntity, DimensionViewModel>();
 
             CreateMap<HumansByDimensionsEntity, HumansByDimensionsViewModel>()
                 .ForMember(vm => vm.Name, map => map.MapFrom(m => m.Human != null ? m.Human.Name : null))
+                .ForMember(vm => vm.DimentionName, map => map.MapFrom(m => m.Dimensions != null ? m.Dimensions.Name : null))
                 .ForMember(vm => vm.PartnerName, map => map.MapFrom(m => m.HumanResponsibleForMe != null
                  ? m.HumanResponsibleForMe.Name : m.ResponsibleForWhichHuman.Name));
 
@@ -29,6 +31,7 @@ namespace RickLocalization.Api.AutoMapperProfile
             #region ViewModel X Entity
 
             CreateMap<HumansViweModel, HumansEntity>();
+            CreateMap<DimensionViewModel, DimensionsEntity>();
             CreateMap<HumansByDimensionsViewModel, HumansByDimensionsEntity>();
             CreateMap<TravelHistoryViewModel, TravelHistoryEntity>();
 

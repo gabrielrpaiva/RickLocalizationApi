@@ -27,8 +27,8 @@ namespace RickLocalization.Api.Controllers
         }
 
         [HttpGet]
-        [Route("GetHumanOriginalDimensionWithTravels")]
-        public virtual async Task<IActionResult> GetHumanOriginalDimensionWithTravels([FromQuery] int IdHuman)
+        [Route("GetHumanOriginalDimensionWithTravels/{idHuman}")]
+        public virtual async Task<IActionResult> GetHumanOriginalDimensionWithTravels([FromRoute] int IdHuman)
         {
             HumansByDimensionsViewModel entidade = new HumansByDimensionsViewModel();
 
@@ -53,17 +53,17 @@ namespace RickLocalization.Api.Controllers
 
 
         [HttpGet]
-        [Route("GetResponsableHumanOriginalDimension")]
-        public virtual async Task<IActionResult> GetResponsableHumanOriginalDimension([FromQuery] int IdHuman)
+        [Route("GetResponsableHumanOriginalDimension/{idDimension}")]
+        public virtual async Task<IActionResult> GetResponsableHumanOriginalDimension([FromRoute] int IdDimension)
         {
-            HumansByDimensionsViewModel entidade = new HumansByDimensionsViewModel();
+            List<HumansByDimensionsViewModel> entidade = new List<HumansByDimensionsViewModel>();
 
             try
             {
                 await Task.Run(() =>
                 {
-                    HumansByDimensionsEntity entity = _service.GetResponsableHumanOriginalDimension(IdHuman);
-                    entidade = _mapper.Map<HumansByDimensionsViewModel>(entity);
+                    IList<HumansByDimensionsEntity> entity = _service.GetResponsableHumanOriginalDimension(IdDimension);
+                    entidade = _mapper.Map<List<HumansByDimensionsViewModel>>(entity);
 
                 });
             }
@@ -75,6 +75,6 @@ namespace RickLocalization.Api.Controllers
 
 
             return Ok(entidade);
-        }
+        } 
     }
 }

@@ -13,7 +13,7 @@ namespace RickLocalization.Api.ViewModels
 
         public int IdTargetDimension { get; set; }
 
-        public string TravelDate { get; set; }
+        public DateTime TravelDate { get; set; }
 
         [NotMapped]
         public string DimensionName { get; set; }

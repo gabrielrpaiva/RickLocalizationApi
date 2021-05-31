@@ -28,7 +28,7 @@ namespace RickLocalization.Repository.Repository
                .Include(x => x.Dimensions)
                .Include(x => x.TravelHistories)
                .Include("TravelHistories.Dimensions")
-               .FirstOrDefault(x => x.IdHuman == idHuman);
+               .FirstOrDefault(x => x.Id == idHuman);
             }
             catch (Exception ex)
             {
@@ -37,15 +37,25 @@ namespace RickLocalization.Repository.Repository
             }  
         }
 
-        public HumansByDimensionsEntity GetResponsableHumanOriginalDimension(int idHuman)
+        public IQueryable<HumansByDimensionsEntity> GetResponsableHumanOriginalDimension(int IdDimension)
         {
             try
             {
-                return _context.HumansByDimensionsEntity
+                var query = _context.HumansByDimensionsEntity
               .Include(x => x.Human)
+              .Include(x => x.Dimensions)
               .Include(x => x.HumanResponsibleForMe)
-              .Include(x => x.ResponsibleForWhichHuman)
-              .FirstOrDefault(x => x.IdHuman == idHuman);
+              .Include(x => x.ResponsibleForWhichHuman).AsQueryable();
+
+                query = query.Where(x => x.IdHumanResponsibleForMe == null);
+
+                if (IdDimension != 0)
+                {
+                    query = query.Where(x => x.IdDimension == IdDimension);
+                }
+                
+
+                return query;
             }
             catch (Exception ex)
             {

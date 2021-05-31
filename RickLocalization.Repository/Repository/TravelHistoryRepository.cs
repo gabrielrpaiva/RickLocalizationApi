@@ -49,6 +49,7 @@ namespace RickLocalization.Repository.Repository
 
             try
             {
+                travelHistoryEntity.TravelDate = DateTime.Now;
                 _context.TravelHistoryEntity.Add(travelHistoryEntity);
                 _context.SaveChanges();
             }

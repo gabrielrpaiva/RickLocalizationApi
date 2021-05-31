@@ -22,10 +22,12 @@ namespace RickLocalization.Api
         {
             services.AddScoped<IHumansByDimensionsService, HumansByDimensionsService>();
             services.AddScoped<ITravelHistoryService, TravelHistoryService>();
+            services.AddScoped<IDimentionService, DimentionService>();
 
 
             services.AddScoped<IHumansByDimensionsRepository, HumansByDimensionsRepository>();
             services.AddScoped<ITravelHistoryRepository, TravelHistoryRepository>();
+            services.AddScoped<IDimentionRepository, DimentionRepository>();
         }
          
     }

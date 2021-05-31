@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace RickLocalization.Api.ViewModels
 {
-    public class HumansByDimensionsViewModel : BaseResponse
+    public class HumansByDimensionsViewModel
     {
-        #region "Properties"
+        #region "Properties"    
+
+        public int Id { get; set; }
         public int IdHuman { get; set; }
 
         public int IdDimension { get; set; }
@@ -18,6 +20,8 @@ namespace RickLocalization.Api.ViewModels
         public int? IdHumanResponsibleForMe { get; set; }
 
         public string Name { get; set; }
+
+        public string DimentionName { get; set; }
 
         public string PartnerName { get; set; }
 

@@ -4,6 +4,7 @@ using RickLocalization.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace RickLocalization.Service
 {
@@ -30,11 +31,11 @@ namespace RickLocalization.Service
   
         }
 
-        public HumansByDimensionsEntity GetResponsableHumanOriginalDimension(int idHuman)
+        public IList<HumansByDimensionsEntity> GetResponsableHumanOriginalDimension(int IdDimension)
         {
             try
             {
-                return _repository.GetResponsableHumanOriginalDimension(idHuman);
+                return _repository.GetResponsableHumanOriginalDimension(IdDimension).ToList();
             }
             catch (Exception ex)
             {

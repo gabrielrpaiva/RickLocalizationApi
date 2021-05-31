@@ -8,6 +8,6 @@ namespace RickLocalization.Service.Interfaces
     public interface IHumansByDimensionsService
     {
         HumansByDimensionsEntity GetHumanOriginalDimensionWithTravels(int idHuman);
-        HumansByDimensionsEntity GetResponsableHumanOriginalDimension(int idHuman);
+        IList<HumansByDimensionsEntity> GetResponsableHumanOriginalDimension(int IdDimension);
     }
 }

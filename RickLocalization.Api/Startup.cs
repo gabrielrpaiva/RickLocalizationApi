@@ -39,6 +39,7 @@ namespace RickLocalization.Api
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
+        
             services.AddDbContext<RickLocalizationContext>(options =>
              options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             InjectionContainer.Setup(services);
@@ -52,6 +53,11 @@ namespace RickLocalization.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
